@@ -1,0 +1,19 @@
+<div class="create-todo-block jcc">
+  <label
+    >Descriptiom:
+    <input type="text" [(ngModel)]="currentTodo.description" />
+  </label>
+  <label
+    >Date:
+    <input type="date" [(ngModel)]="currentTodo.date" />
+  </label>
+  <label for="ToDo">Choose priority:</label>
+
+  <select [(ngModel)]="currentTodo.priority" name="ToDos" id="ToDos-select">
+    <option *ngFor="let priority of priorities" [value]="priority">
+      {{ priority }}
+    </option>
+  </select>
+
+  <button (click)="createToDo()">Create</button>
+</div>

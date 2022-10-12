@@ -1,0 +1,56 @@
+<!-- <div class="create-todo-block jcc">
+  <label
+    >Descriptiom:
+    <input type="text" [(ngModel)]="currentTodo.description" />
+  </label>
+  <label
+    >Date:
+    <input type="date" [(ngModel)]="currentTodo.date" />
+  </label>
+  <label for="ToDo">Choose priority:</label>
+
+  <select [(ngModel)]="currentTodo.priority" name="ToDos" id="ToDos-select">
+    <option *ngFor="let priority of priorities" [value]="priority">
+      {{ priority }}
+    </option>
+  </select>
+
+ <select [(ngModel)]="currentTodo.priority" name="ToDos" id="ToDos-select">
+    <option
+      *ngFor="let priority of priorities"
+      [ngValue]="priorityType[priority]"
+    >
+      {{ priority }}
+    </option>
+  </select> -->
+
+<!-- <button (click)="createToDo()">Create</button>
+</div> -->
+
+<app-data-to-add (addEvent)="addTodo($event)"></app-data-to-add>
+
+<div *ngIf="todos.length == 0" class="text-center">
+  <img
+    class="no-item-found-img"
+    src="https://media.istockphoto.com/vectors/no-item-found-vector-flat-icon-design-illustration-web-and-mobile-vector-id1357284048?k=20&m=1357284048&s=612x612&w=0&h=IR1A8Km7cdhaiEHT4GhwEhCxzVnwk-MaCrAvhbOaj3o="
+    alt="no item found"
+  />
+</div>
+
+<mat-selection-list>
+  <mat-list-option
+    class="jcc"
+    *ngFor="let todo of todos"
+    [class.doneStyle]="todo.isDone"
+    [class.deadlineTime]="isDeadlineTime(todo.date)"
+  >
+    <div class="jcc">
+      <span [class.todoDone]="todo.isDone">{{ todo.description }}</span>
+      | Priority: {{ todo.priority }} | Deadline: {{ todo.date }}
+      <div><input type="checkbox" [(ngModel)]="todo.isDone" /></div>
+    </div>
+  </mat-list-option>
+</mat-selection-list>
+<p *ngIf="todos.length != 0" class="text-center">
+  To do Count: {{ todos.length }}
+</p>

@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+.text-center{
+    text-align: center;
+}
+
+.jcc{
+    display: flex;
+    justify-content: center;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.container {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.main-container {
+    /* 100% of viewport height */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
